@@ -22,12 +22,38 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/styles",
+              "src/assets/js"
             ],
             "styles": [
+              "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css",
+              "src/assets/styles/all.min.css",
+              "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css",
+              "src/assets/styles/icheckbootstrap.min.css",
+              "src/assets/styles/jqvmap.min.css",
+              "src/assets/styles/adminlte.min.css",
+              "src/assets/styles/OverlayScrollbars.min.css",
+              "src/assets/styles/daterangepicker.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/jquery-ui.min.js",
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/Chart.min.js",
+              "src/assets/js/sparkline.js",
+              "src/assets/js/jquery.vmap.min.js",
+              "src/assets/js/jquery.vmap.usa.js",
+              "src/assets/js/jquery.knob.min.js",
+              "src/assets/js/moment.min.js",
+              "src/assets/js/daterangepicker.js",
+              "src/assets/js/tempusdominus-bootstrap-4.min.js",
+              "src/assets/js/summernote-bs4.min.js",
+              "src/assets/js/jquery.overlayScrollbars.min.js",
+              "src/assets/js/adminlte.js",
+              "src/assets/js/dashboard.js"
+
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -86,7 +112,7 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/styles"
             ],
             "styles": [
               "src/styles.css"
