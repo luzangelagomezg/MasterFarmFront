@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Animals</h1>
+                <h1 class="m-0">Product Types</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Animals</li>
+                    <li class="breadcrumb-item active">Product Types</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -19,7 +19,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">List of animals</h3>
+                  <h3 class="card-title">List of Product Types</h3>
   
                   <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,45 +39,30 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>User</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Reason</th>
+                        <th>Product Type</th>
+                        <th>Active</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>183</td>
-                        <td>John Doe</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-success">Approved</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      </tr>
-                      <tr>
-                        <td>219</td>
-                        <td>Alexander Pierce</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-warning">Pending</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      </tr>
-                      <tr>
-                        <td>657</td>
-                        <td>Bob Doe</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-primary">Approved</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      </tr>
-                      <tr>
-                        <td>175</td>
-                        <td>Mike Doe</td>
-                        <td>11-7-2014</td>
-                        <td><span class="tag tag-danger">Denied</span></td>
-                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                      </tr>
+                      <tr *ngFor="let item of data">
+                        <td>{{item.id}}</td>
+                        <td>{{item.productType}}</td>
+                        <td>
+                            <span *ngIf="item.is_active" class="badge badge-success">{{item.is_active}}</span>
+                            <span *ngIf="!item.is_active" class="badge badge-danger">{{item.is_active}}</span>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-tool"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-tool"><i class="fas fa-trash"></i></button>
+                      </tr>                      
                     </tbody>
                   </table>
                 </div>
                 <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                    <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+                </div>
               </div>
               <!-- /.card -->
             </div>
