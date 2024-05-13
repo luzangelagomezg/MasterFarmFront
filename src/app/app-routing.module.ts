@@ -6,6 +6,7 @@ import { ProducttypeCreateComponent } from "./product/producttype-create/product
 import { ProductListComponent } from "./product/product-list/product-list.component";
 import { FarmerListComponent } from "./farm/farmer-list/farmer-list.component";
 import { FarmListComponent } from "./farm/farm-list/farm-list.component";
+import { ProductCreateComponent } from "./product/product-create/product-create.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "animals", pathMatch: "full" },
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: "producttypes", component: ProducttypeListComponent},
     { path: "producttypes/:id", component: ProducttypeCreateComponent},
     { path: "products", component:ProductListComponent},
+    { path: "products/:id", component:ProductCreateComponent},
     { path: "farmers", component: FarmerListComponent},
     { path: "farms", component: FarmListComponent}
 ];
