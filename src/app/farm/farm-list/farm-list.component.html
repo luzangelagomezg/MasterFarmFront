@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Farmers</h1>
+                <h1 class="m-0">Farms</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Farmers</li>
+                    <li class="breadcrumb-item active">Farms</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -19,7 +19,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">List of farmers</h3>
+                  <h3 class="card-title">List of farms</h3>
   
                   <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,11 +39,8 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email </th>
-                        <th>Phone</th>
-                        <th>Adress</th>
+                        <th>Farm Name</th>
+                        <th>Farmer Name</th>
                         <th>Active</th>
                         <th>Actions</th>
                       </tr>
@@ -51,11 +48,8 @@
                     <tbody>
                       <tr *ngFor="let item of data">
                         <td>{{item.id}}</td>
-                        <td>{{item.firstNameFarmer}}</td>
-                        <td>{{item.lastNameFarmer}}</td>
-                        <td>{{item.emailFarmer}}</td>
-                        <td>{{item.phoneFarmer}}</td>
-                        <td>{{item.addressFarmer}}</td>
+                        <td>{{item.farmName}}</td>
+                        <td>{{item.farmer.firstNameFarmer}}</td>
                         <td>
                             <span *ngIf="item.is_active" class="badge badge-success">{{item.is_active}}</span>
                             <span *ngIf="!item.is_active" class="badge badge-danger">{{item.is_active}}</span>

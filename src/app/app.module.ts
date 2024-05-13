@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
+import { FarmModule } from './farm/farm.module';
+import { Toast, ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,8 +20,12 @@ import { ProductModule } from './product/product.module';
     HttpClientModule,
     ProductModule,
     CommonModule,
+    FarmModule,    
     RouterModule,
-    BrowserModule
+    BrowserModule,
+    ToastrModule.forRoot({}),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,7 @@ import { ProducttypeListComponent } from "./product/producttype-list/producttype
 import { ProducttypeCreateComponent } from "./product/producttype-create/producttype-create.component";
 import { ProductListComponent } from "./product/product-list/product-list.component";
 import { FarmerListComponent } from "./farm/farmer-list/farmer-list.component";
+import { FarmListComponent } from "./farm/farm-list/farm-list.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "animals", pathMatch: "full" },
@@ -12,7 +13,8 @@ const routes: Routes = [
     { path: "producttypes", component: ProducttypeListComponent},
     { path: "producttypes/:id", component: ProducttypeCreateComponent},
     { path: "products", component:ProductListComponent},
-    { path: "farmers", component: FarmerListComponent}
+    { path: "farmers", component: FarmerListComponent},
+    { path: "farms", component: FarmListComponent}
 ];
 
 @NgModule({
