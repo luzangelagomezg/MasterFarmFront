@@ -40,7 +40,7 @@
                       <tr>
                         <th>ID</th>
                         <th>Farm Name</th>
-                        <th>Farmer Name</th>
+                        <th>Farmer ID</th>
                         <th>Active</th>
                         <th>Actions</th>
                       </tr>
@@ -49,14 +49,14 @@
                       <tr *ngFor="let item of data">
                         <td>{{item.id}}</td>
                         <td>{{item.farmName}}</td>
-                        <td>{{item.farmer.firstNameFarmer}}</td>
+                        <td>{{item.farmerId}}</td>
                         <td>
                             <span *ngIf="item.is_active" class="badge badge-success">{{item.is_active}}</span>
                             <span *ngIf="!item.is_active" class="badge badge-danger">{{item.is_active}}</span>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-tool"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-tool"><i class="fas fa-trash"></i></button>
+                            <button type="button" class="btn btn-tool"><i class="fas fa-edit" (click)="gotoItem(item.id)"></i></button>
+                            <button type="button" class="btn btn-tool"><i class="fas fa-trash" (click)="deleteItem(item.id)"></i></button>
                         </td>
                       </tr>                      
                     </tbody>
@@ -64,7 +64,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                    <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+                    <button type="button" class="btn btn-primary float-right" (click)="gotoItem(0)"><i class="fas fa-plus"></i> Add item</button>
                 </div>
               </div>
               <!-- /.card -->
