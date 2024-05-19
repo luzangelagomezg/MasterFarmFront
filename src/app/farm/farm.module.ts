@@ -7,6 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FarmCreateComponent } from './farm-create/farm-create.component';
 import { AnimalCreateComponent } from './animal-create/animal-create.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
+import { PlotListComponent } from './plot-list/plot-list.component';
+import { PlotCreateComponent } from './plot-create/plot-create.component';
+import { PlottypeListComponent } from './plottype-list/plottype-list.component';
+import { PlottypeCreateComponent } from './plottype-create/plottype-create.component';
+import { AgriculturaloperationtypeListComponent } from './agriculturaloperationtype-list/agriculturaloperationtype-list.component';
+import { AgriculturaloperationtypeCreateComponent } from './agriculturaloperationtype-create/agriculturaloperationtype-create.component';
 
 
 
@@ -17,7 +23,13 @@ import { AnimalListComponent } from './animal-list/animal-list.component';
     FarmerCreateComponent,
     FarmCreateComponent,
     AnimalCreateComponent,
-    AnimalListComponent
+    AnimalListComponent,
+    PlotListComponent,
+    PlotCreateComponent,
+    PlottypeListComponent,
+    PlottypeCreateComponent,
+    AgriculturaloperationtypeListComponent,
+    AgriculturaloperationtypeCreateComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IFarm } from '../../models/farm';
 import { FarmService } from '../farm.service';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './farm-list.component.html',
   styleUrl: './farm-list.component.css'
 })
-export class FarmListComponent {
+export class FarmListComponent implements OnInit{
 
   data: IFarm[] = []; 
 

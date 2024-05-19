@@ -5,11 +5,14 @@ import { IFarmer } from '../models/Farmer';
 import { IFarm } from '../models/farm';
 import { IAnimal } from '../models/animal';
 import { IPlot } from '../models/plot';
+import { IPlotType } from '../models/plottype';
+import { IAgriculturalOperationType } from '../models/agriculturaloperationtype';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FarmService {
+           
   private apiurl = environment.apiUrl + 'api/';
   constructor(private http: HttpClient) { }
 
@@ -73,5 +76,53 @@ export class FarmService {
 
   getPlots(){
     return this.http.get<IPlot[]>(this.apiurl + 'Plot');
+  }
+
+  getPlot(id: number){
+    return this.http.get<IPlot>(this.apiurl + 'Plot/'+id);
+  } 
+
+  getPlotType(id: number) {
+    return this.http.get<IPlotType>(this.apiurl + 'PlotType/' + id);
+  }
+
+  updatePlotType(newPlotType: IPlotType) {
+    return this.http.put(this.apiurl + 'PlotType/' + newPlotType.id + '?plottype=' + newPlotType.plotType, '');
+  }
+
+  createPlotType(newPlotType: IPlotType) {
+    return this.http.post(this.apiurl + 'PlotType/' + newPlotType.plotType, '');
+  }
+
+  getPlotTypes() {
+    return this.http.get<IPlotType[]>(this.apiurl + 'PlotType');
+  }
+
+  deletePlotType(id: number) {
+    return this.http.delete(this.apiurl + 'PlotType/' + id);
+  }
+  updatePlot(newPlot: IPlot) {
+    return this.http.put(this.apiurl + 'Plot/' + newPlot.id + '?number=' + newPlot.number + '&farmId=' + newPlot.farmId + '&plotTypeId=' + newPlot.plotTypeId, '');
+  }
+  createPlot(newPlot: IPlot) {
+    return this.http.post(this.apiurl + 'Plot/' + newPlot.number + '/' + newPlot.farmId + '/' + newPlot.plotTypeId, '');
+  }
+  deletePlot(id: number) {
+    return this.http.delete(this.apiurl + 'Plot/' + id);
+  }
+  getAgriculturalOperationTypes() {
+    return this.http.get<IAgriculturalOperationType[]>(this.apiurl + 'AgriculturalOperationsType');
+  }
+  getAgriculturalOperationType(id: number) {
+    return this.http.get<IAgriculturalOperationType>(this.apiurl + 'AgriculturalOperationsType/' + id);
+  }
+  deleteAgriculturalOperationTypes(id: number) {
+    return this.http.delete(this.apiurl + 'AgriculturalOperationsType/' + id);
+  }
+  createAgriculturalOperationType(newAgriculturalOperationType: IAgriculturalOperationType) {
+    return this.http.post(this.apiurl + 'AgriculturalOperationsType/' + newAgriculturalOperationType.type, '');
+  }
+  updateAgriculturalOperationType(newAgriculturalOperationType: IAgriculturalOperationType) {
+    return this.http.put(this.apiurl + 'AgriculturalOperationsType/' + newAgriculturalOperationType.id + '?type=' + newAgriculturalOperationType.type, '');
   }
 }

@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { IFarmer } from '../../models/Farmer';
+import { Component, OnInit } from '@angular/core';
 import { FarmService } from '../farm.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { IFarmer } from '../../models/Farmer';
 
 @Component({
   selector: 'app-farmer-list',
   templateUrl: './farmer-list.component.html',
   styleUrl: './farmer-list.component.css'
 })
-export class FarmerListComponent {
+export class FarmerListComponent implements OnInit{
 
   data: IFarmer[] = [];
 
