@@ -10,6 +10,7 @@ import { FarmModule } from './farm/farm.module';
 import { Toast, ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
 
 
 
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FarmModule,    
     RouterModule,
     BrowserModule,
+    UserModule,
     ToastrModule.forRoot({}),
     BrowserAnimationsModule,
     ReactiveFormsModule

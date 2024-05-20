@@ -13,6 +13,12 @@ import { PlottypeListComponent } from './plottype-list/plottype-list.component';
 import { PlottypeCreateComponent } from './plottype-create/plottype-create.component';
 import { AgriculturaloperationtypeListComponent } from './agriculturaloperationtype-list/agriculturaloperationtype-list.component';
 import { AgriculturaloperationtypeCreateComponent } from './agriculturaloperationtype-create/agriculturaloperationtype-create.component';
+import { CropListComponent } from './crop-list/crop-list.component';
+import { CropCreateComponent } from './crop-create/crop-create.component';
+import { AgriculturaloperationListComponent } from './agriculturaloperation-list/agriculturaloperation-list.component';
+import { AgriculturaloperationCreateComponent } from './agriculturaloperation-create/agriculturaloperation-create.component';
+import { HarvestrecordListComponent } from './harvestrecord-list/harvestrecord-list.component';
+import { HarvestrecordCreateComponent } from './harvestrecord-create/harvestrecord-create.component';
 
 
 
@@ -29,7 +35,13 @@ import { AgriculturaloperationtypeCreateComponent } from './agriculturaloperatio
     PlottypeListComponent,
     PlottypeCreateComponent,
     AgriculturaloperationtypeListComponent,
-    AgriculturaloperationtypeCreateComponent
+    AgriculturaloperationtypeCreateComponent,
+    CropListComponent,
+    CropCreateComponent,
+    AgriculturaloperationListComponent,
+    AgriculturaloperationCreateComponent,
+    HarvestrecordListComponent,
+    HarvestrecordCreateComponent
   ],
   imports: [
     CommonModule,
