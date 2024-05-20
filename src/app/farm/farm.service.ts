@@ -7,6 +7,7 @@ import { IAnimal } from '../models/animal';
 import { IPlot } from '../models/plot';
 import { IPlotType } from '../models/plottype';
 import { IAgriculturalOperationType } from '../models/agriculturaloperationtype';
+import { ICrop } from '../models/crop';
 
 @Injectable({
   providedIn: 'root'
@@ -124,5 +125,21 @@ export class FarmService {
   }
   updateAgriculturalOperationType(newAgriculturalOperationType: IAgriculturalOperationType) {
     return this.http.put(this.apiurl + 'AgriculturalOperationsType/' + newAgriculturalOperationType.id + '?type=' + newAgriculturalOperationType.type, '');
+  }
+
+  getCrops() {
+    return this.http.get<ICrop[]>(this.apiurl + 'Crop');
+  }
+  deleteCrop(id: number) {
+    return this.http.delete(this.apiurl + 'Crop/' + id);
+  }
+  getCrop(id: number) {
+    return this.http.get<ICrop>(this.apiurl + 'Crop/' + id);
+  }
+  createCrop(newCrop: ICrop) {
+    return this.http.post(this.apiurl + 'Crop/' + newCrop.name + '/' + newCrop.description + '/' + newCrop.harvestDays + '/' + newCrop.plotId, '');
+  }
+  updateCrop(newCrop: ICrop) {
+    return this.http.put(this.apiurl + 'Crop/' + newCrop.id + '?name=' + newCrop.name + '&description=' + newCrop.description + '&harvestDays=' + newCrop.harvestDays + '&plotId=' + newCrop.plotId, '');
   }
 }
