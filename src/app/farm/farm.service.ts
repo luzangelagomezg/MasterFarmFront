@@ -8,6 +8,8 @@ import { IPlot } from '../models/plot';
 import { IPlotType } from '../models/plottype';
 import { IAgriculturalOperationType } from '../models/agriculturaloperationtype';
 import { ICrop } from '../models/crop';
+import { IAgriculturalOperation } from '../models/agriculturaloperation';
+import { IHarvestRecord } from '../models/harvestrecord';
 
 @Injectable({
   providedIn: 'root'
@@ -142,4 +144,37 @@ export class FarmService {
   updateCrop(newCrop: ICrop) {
     return this.http.put(this.apiurl + 'Crop/' + newCrop.id + '?name=' + newCrop.name + '&description=' + newCrop.description + '&harvestDays=' + newCrop.harvestDays + '&plotId=' + newCrop.plotId, '');
   }
+
+  getAgriculturalOperations() {
+    return this.http.get<IAgriculturalOperation[]>(this.apiurl + 'AgriculturalOperation');
+  }
+  deleteAgriculturalOperation(id: number) {
+    return this.http.delete(this.apiurl + 'AgriculturalOperation/' + id);
+  }
+  getAgriculturalOperation(id: number) {
+    return this.http.get<IAgriculturalOperation>(this.apiurl + 'AgriculturalOperation/' + id);
+  }
+  updateAgriculturalOperation(newAgriculturalOperation: IAgriculturalOperation) {
+    return this.http.put(this.apiurl + 'AgriculturalOperation/' + newAgriculturalOperation.id + '?cropId=' + newAgriculturalOperation.cropId +'&dateOperation=' + newAgriculturalOperation.dateOperation+'&operationTypeId=' + newAgriculturalOperation.operationTypeId  + '&description=' + newAgriculturalOperation.description, '');
+  }
+  createAgriculturalOperation(newAgriculturalOperation: IAgriculturalOperation) {
+    return this.http.post(this.apiurl + 'AgriculturalOperation/' + newAgriculturalOperation.cropId + '/' + newAgriculturalOperation.dateOperation + '/' + newAgriculturalOperation.operationTypeId + '/' + newAgriculturalOperation.description, '');
+  }
+
+  getHarvestRecords() {
+    return this.http.get<IHarvestRecord[]>(this.apiurl + 'HarvestRecord');
+  }
+  deleteHarvestRecord(id: number) {
+    return this.http.delete(this.apiurl + 'HarvestRecord/' + id);
+  }
+  getHarvestRecord(id: number) {
+    return this.http.get<IHarvestRecord>(this.apiurl + 'HarvestRecord/' + id);
+  }
+  updateHarvestRecord(newHarvestRecord: IHarvestRecord) {
+    return this.http.put(this.apiurl + 'HarvestRecord/' + newHarvestRecord.id + '?operationId=' + newHarvestRecord.operationId + '&productId=' + newHarvestRecord.productId + '&quantity=' + newHarvestRecord.quantity, '');
+  }
+  createHarvestRecord(newHarvestRecord: IHarvestRecord) {
+    return this.http.post(this.apiurl + 'HarvestRecord/' + newHarvestRecord.operationId + '/' + newHarvestRecord.productId + '/' + newHarvestRecord.quantity, '');
+  }
+  
 }

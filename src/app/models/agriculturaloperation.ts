@@ -23,4 +23,4 @@ export class AgriculturalOperation implements IAgriculturalOperation {
     public description: string,
     public is_active: boolean
 ){}
-}
+}  
