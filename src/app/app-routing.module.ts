@@ -24,9 +24,11 @@ import { HarvestrecordListComponent } from "./farm/harvestrecord-list/harvestrec
 import { HarvestrecordCreateComponent } from "./farm/harvestrecord-create/harvestrecord-create.component";
 import { UserListComponent } from "./user/user-list/user-list.component";
 import { UserCreateComponent } from "./user/user-create/user-create.component";
+import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "animals", pathMatch: "full" },
+    { path: "", redirectTo: "home", pathMatch: "full" },
+    { path: "home", component: HomeComponent},
     { path: "producttypes", component: ProducttypeListComponent},
     { path: "producttypes/:id", component: ProducttypeCreateComponent},
     { path: "products", component:ProductListComponent},
