@@ -1,0 +1,55 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Create Agricultural Operation</h1> 
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="/agriculturaloperations">Agricultural Operations</a></li>
+                    <li class="breadcrumb-item active">Create</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Create Agricultural Operation</h3>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+                            <div class="form-group">
+                                <label for="cropId">Crop</label>
+                                <select class="form-control" id="cropId" formControlName="cropId">
+                                    <option *ngFor="let crop of crops" [value]="crop.id">{{ crop.name }}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOperation">Date Operation</label>
+                                <input type="date" class="form-control" id="dateOperation" formControlName="dateOperation" placeholder="Enter date operation">
+                            </div>
+                            <div class="form-group">
+                                <label for="operationTypeId">Operation Type</label>
+                                <select class="form-control" id="operationTypeId" formControlName="operationTypeId">
+                                    <option *ngFor="let operationType of operationTypes" [value]="operationType.id">{{ operationType.type }}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <input type="text" class="form-control" id="description" formControlName="description" placeholder="Enter description">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

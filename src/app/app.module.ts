@@ -6,18 +6,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
+import { FarmModule } from './farm/farm.module';
+import { Toast, ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     ProductModule,
     CommonModule,
+    FarmModule,    
     RouterModule,
-    BrowserModule
+    BrowserModule,
+    UserModule,
+    ToastrModule.forRoot({}),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })

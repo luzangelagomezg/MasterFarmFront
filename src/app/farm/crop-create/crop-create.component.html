@@ -1,0 +1,52 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Create Crop</h1> 
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="/crops">Crops</a></li>
+                    <li class="breadcrumb-item active">Create</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Create Crop</h3>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+                            <div class="form-group">
+                                <label for="name">Crop Name</label>
+                                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter crop name">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <input type="text" class="form-control" id="description" formControlName="description" placeholder="Enter description">
+                            </div>
+                            <div class="form-group">
+                                <label for="harvestDays">Harvest Days</label>
+                                <input type="number" class="form-control" id="harvestDays" formControlName="harvestDays" placeholder="Enter harvest days">
+                            </div>
+                            <div class="form-group">
+                                <label for="plotId">Plot</label>
+                                <select class="form-control" id="plotId" formControlName="plotId">
+                                    <option *ngFor="let plot of plots" [value]="plot.id">{{ plot.number }}</option>
+                                </select>
+                            </div>                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

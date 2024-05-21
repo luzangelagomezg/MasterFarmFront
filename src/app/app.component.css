@@ -1,0 +1,11 @@
+.main-footer .social {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0 10px; 
+}
+.content-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
