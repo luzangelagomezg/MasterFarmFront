@@ -25,38 +25,38 @@ import { HarvestrecordCreateComponent } from "./farm/harvestrecord-create/harves
 import { UserListComponent } from "./user/user-list/user-list.component";
 import { UserCreateComponent } from "./user/user-create/user-create.component";
 import { HomeComponent } from "./home/home.component";
+import { LoginComponent } from "./login/login.component";
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
     { path: "", redirectTo: "home", pathMatch: "full" },
-    { path: "home", component: HomeComponent},
-    { path: "producttypes", component: ProducttypeListComponent},
-    { path: "producttypes/:id", component: ProducttypeCreateComponent},
-    { path: "products", component:ProductListComponent},
-    { path: "products/:id", component:ProductCreateComponent},
-    { path: "farmers", component: FarmerListComponent},
-    { path: "farmers/:id", component: FarmerCreateComponent},
-    { path: "farms", component: FarmListComponent},
-    { path: "farms/:id", component: FarmCreateComponent},
-    { path: "animals/:id", component: AnimalCreateComponent},
-    { path: "animals", component: AnimalListComponent},
-    { path: "plots", component: PlotListComponent},
-    { path: "plots/:id", component: PlotCreateComponent},
-    { path: "plottypes", component: PlottypeListComponent},
-    { path: "plottypes/:id", component: PlottypeCreateComponent},
-    { path: "agriculturaloperationtypes", component: AgriculturaloperationtypeListComponent},
-    { path: "agriculturaloperationtypes/:id", component: AgriculturaloperationtypeCreateComponent},
-    { path: "crops", component: CropListComponent},
-    { path: "crops/:id", component: CropCreateComponent},
-    { path: "agriculturaloperations", component: AgriculturaloperationListComponent},
-    { path: "agriculturaloperations/:id", component: AgriculturaloperationCreateComponent},
-    { path: "harvestrecords", component: HarvestrecordListComponent},
-    { path: "harvestrecords/:id", component: HarvestrecordCreateComponent},
-    { path: "users", component: UserListComponent},
-    { path: "users/:id", component: UserCreateComponent}
-
-
-
-   
+    { path: "home", component: HomeComponent, canActivate: [AuthGuard]},
+    { path: "producttypes", component: ProducttypeListComponent, canActivate: [AuthGuard]},
+    { path: "producttypes/:id", component: ProducttypeCreateComponent, canActivate: [AuthGuard]},
+    { path: "products", component:ProductListComponent, canActivate: [AuthGuard]},
+    { path: "products/:id", component:ProductCreateComponent, canActivate: [AuthGuard]},
+    { path: "farmers", component: FarmerListComponent, canActivate: [AuthGuard]},
+    { path: "farmers/:id", component: FarmerCreateComponent, canActivate: [AuthGuard]},
+    { path: "farms", component: FarmListComponent, canActivate: [AuthGuard]},
+    { path: "farms/:id", component: FarmCreateComponent, canActivate: [AuthGuard]},
+    { path: "animals/:id", component: AnimalCreateComponent, canActivate: [AuthGuard]},
+    { path: "animals", component: AnimalListComponent, canActivate: [AuthGuard]},
+    { path: "plots", component: PlotListComponent, canActivate: [AuthGuard]},
+    { path: "plots/:id", component: PlotCreateComponent, canActivate: [AuthGuard]},
+    { path: "plottypes", component: PlottypeListComponent, canActivate: [AuthGuard]},
+    { path: "plottypes/:id", component: PlottypeCreateComponent, canActivate: [AuthGuard]},
+    { path: "agriculturaloperationtypes", component: AgriculturaloperationtypeListComponent, canActivate: [AuthGuard]},
+    { path: "agriculturaloperationtypes/:id", component: AgriculturaloperationtypeCreateComponent, canActivate: [AuthGuard]},
+    { path: "crops", component: CropListComponent, canActivate: [AuthGuard]},
+    { path: "crops/:id", component: CropCreateComponent, canActivate: [AuthGuard]},
+    { path: "agriculturaloperations", component: AgriculturaloperationListComponent, canActivate: [AuthGuard]},
+    { path: "agriculturaloperations/:id", component: AgriculturaloperationCreateComponent, canActivate: [AuthGuard]},
+    { path: "harvestrecords", component: HarvestrecordListComponent, canActivate: [AuthGuard]},
+    { path: "harvestrecords/:id", component: HarvestrecordCreateComponent, canActivate: [AuthGuard]},
+    { path: "users", component: UserListComponent, canActivate: [AuthGuard]},
+    { path: "users/:id", component: UserCreateComponent, canActivate: [AuthGuard]},
+    { path: "login", component: LoginComponent},
+  
 ];
 
 @NgModule({
