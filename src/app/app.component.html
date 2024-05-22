@@ -6,6 +6,7 @@
   </div>
 
   <!-- Navbar -->
+  <div [hidden]="!showMenu">
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -13,10 +14,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Home</a>
+        <a routerLink="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a routerLink="#" class="nav-link">Contact</a>
       </li>
     </ul>
   </nav>
@@ -25,17 +26,24 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a routerLink="#" class="brand-link">
       <span class="brand-text font-weight-light">Master Farm</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
+
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a (click)="logout()" class="d-block">Logout</a>
+        </div>
+      </div>
+
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a routerLink="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Products
@@ -44,13 +52,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/producttypes" class="nav-link">
+                <a routerLink="/producttypes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Product Type</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/products" class="nav-link">
+                <a routerLink="/products" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Products</p>
                 </a>
@@ -58,7 +66,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a routerLink="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Farm
@@ -67,55 +75,55 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/farmers" class="nav-link">
+                <a routerLink="/farmers" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Farmer</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/farms" class="nav-link">
+                <a routerLink="/farms" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Farm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/animals" class="nav-link">
+                <a routerLink="/animals" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Animals</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/plots" class="nav-link">
+                <a routerLink="/plots" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Plot</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/plottypes" class="nav-link">
+                <a routerLink="/plottypes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Plot Type</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/agriculturaloperationtypes" class="nav-link">
+                <a routerLink="/agriculturaloperationtypes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Operation Type</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/agriculturaloperations" class="nav-link">
+                <a routerLink="/agriculturaloperations" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Operations</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/crops" class="nav-link">
+                <a routerLink="/crops" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Crops</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/harvestrecords" class="nav-link">
+                <a routerLink="/harvestrecords" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Harvest Records</p>
                 </a>
@@ -123,7 +131,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a routerLink="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Users
@@ -132,7 +140,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="users" class="nav-link">
+                <a routerLink="users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
@@ -145,7 +153,8 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  <div class="content-wrapper">
+  </div>
+  <div [ngClass]="{'show-menu': !showMenu}" class="content-wrapper">
     <router-outlet />
   </div>
   <footer class="main-footer">
